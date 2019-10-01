@@ -14,16 +14,17 @@
 	$noCalon =  $_GET['noCalon'];
 	$gambar = $_GET['foto'];
 	if ($noCalon != null) {
-		if (unlink("foto/$gambar")) {
-			$delete = mysql_query("delete from tb_pemilihanosis where no_calon='$noCalon'") or die(mysql_error());
-			if ($delete) {
-				mysql_query("delete from tb_hasil where pilihan='$noCalon'");
-				$_SESSION['message'] =  "<script>$.Notify({caption: 'Delete Successs',content: 'Data berhasil dihapus!!',type: 'success'});</script>";
-				header('Location: tab.php?tab=Pendaft');
-			} else {
-				$_SESSION['message'] =  "<script>$.Notify({caption: 'Delete Failed',content: 'Data gagal dihapus!!',type: 'alert'});</script>";
-				header('Location: tab.php?tab=Pendaft');
+		$delete = mysql_query("delete from tb_pemilihanosis where no_calon='$noCalon'") or die(mysql_error());
+		if ($delete) {
+			mysql_query("delete from tb_hasil where pilihan='$noCalon'");
+			$path = "foto/$gambar";
+			if (file_exists($path)) {
+				unlink($path);
 			}
+			$_SESSION['message'] =  "<script>$.Notify({caption: 'Delete Successs',content: 'Data berhasil dihapus!!',type: 'success'});</script>";
+		} else {
+			$_SESSION['message'] =  "<script>$.Notify({caption: 'Delete Failed',content: 'Data gagal dihapus!!',type: 'alert'});</script>";
 		}
+		header('Location: tab.php?tab=Pendaft');
 	}
 ?>
