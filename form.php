@@ -26,7 +26,7 @@
 			$data = mysql_fetch_array($query);
 			 
 			if ($data['id'] == 1) {
-				header("location: admin.php");
+				header("location: tab.php?tab=Pendaft");
 			} else {
 				header("location: /osis");
 			}
