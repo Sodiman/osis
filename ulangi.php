@@ -10,6 +10,6 @@
 	} else {
 		$bilik = $_GET['bilik'];
 		mysql_query("update tb_hasil set pilihan = '0' where user = '$bilik' ORDER BY id_no DESC LIMIT 1");
-		header('Location: admin.php');
+		header('Location: tab.php?tab=Pelak');
 	}
 ?>
