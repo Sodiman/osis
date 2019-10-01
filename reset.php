@@ -10,6 +10,6 @@
 	} else {
 		$bilik = $_GET['bilik'];
 		mysql_query("delete from tb_hasil where user = '$bilik' and  pilihan = '0'");
-		header('Location: admin.php');
+		header('Location: tab.php?tab=Pelak');
 	}
 ?>
