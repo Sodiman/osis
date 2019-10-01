@@ -19,10 +19,10 @@
 			if ($delete) {
 				mysql_query("delete from tb_hasil where pilihan='$noCalon'");
 				$_SESSION['message'] =  "<script>$.Notify({caption: 'Delete Successs',content: 'Data berhasil dihapus!!',type: 'success'});</script>";
-				header('Location: pendaftaran.php');
+				header('Location: tab.php?tab=Pendaft');
 			} else {
 				$_SESSION['message'] =  "<script>$.Notify({caption: 'Delete Failed',content: 'Data gagal dihapus!!',type: 'alert'});</script>";
-				header('Location: pendaftaran.php');
+				header('Location: tab.php?tab=Pendaft');
 			}
 		}
 	}
