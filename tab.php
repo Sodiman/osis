@@ -10,8 +10,12 @@
 		header('Location: /osis');
 	}
 	$tab = $_GET['tab'];
-	if ($tab == '' || $tab == null) {
+	if (!isset($tab)) {
 		header('Location: /osis');
+	} else {
+		if ($tab == '' || $tab == null) {
+			header('Location: /osis');
+		}
 	}
 ?>
 <html>
@@ -26,6 +30,7 @@
 			<button id="Pendaft" class="tablinks" onclick="openCity(event, 'Pendaftaran')">Pendaftaran</button>
 			<button id="Pelak" class="tablinks" onclick="openCity(event, 'Pelaksanaan')">Pelaksanaan</button>
 			<button id="Pengum" class="tablinks" onclick="openCity(event, 'Pengumuman')">Pengumuman</button>
+			<a href= "logout.php" onclick="return confirm('Apakah anda yakin untuk Log Out?')"><button style="color:blue">Logout</button></a>
 		</div>
 		<div id="Pendaftaran" class="tabcontent">
 			<?php include "pendaftaran.php";?>
