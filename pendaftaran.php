@@ -21,13 +21,11 @@
         <script type="text/javascript" src="js/metro.js"></script>
 	</head>
 	<body>
-		<h1>Pendaftaran Calon Ketua OSIS</h1>
 		<center>
 		<table class="admin">
 			<thead>
 				<tr>
-					<td colspan="2" style="text-align: left; "><a href="admin.php"><img src="foto/back.png" style="width:30px"></a></td>
-					<td colspan="2" style="text-align: right"><a href="add.php">Tambah</a></td>
+					<td colspan="4" style="text-align: right"><a href="add.php">Tambah</a></td>
 				</tr>
 				<tr>
 					<th>No</th>
@@ -51,7 +49,6 @@
 					<?php $no++;}?>
 			</tbody>
 		</table>
-		<a href="logout.php">LOGOUT</a>
 		</center>
 		<?php echo "$pesan";?>
 	</body>
