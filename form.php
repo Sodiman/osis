@@ -51,9 +51,9 @@
             <div id="main">
                 <h2 style="text-align: center; margin-bottom: 30px">Login</h2>
                 <div id="sisiplogin">
-                    <input class="myInputA" type="text" name="username" value="" placeholder="Masukkan username anda..." required="true"><br>
+                    <input class="myInputA" type="text" name="username" value="" placeholder="Masukkan username anda..." required="true"><br><br>
                     <input class="myInput" type="password" name="password" value="" placeholder="Masukkan password anda..." required="true"><br>
-					<input class="checkbox" type="checkbox" style="margin-bottom: 30px">Tampilkan Password<br>
+					<input class="checkbox" type="checkbox" style="margin-bottom: 30px">Tampilkan Password<br><br>
                     <input class="submit" type="submit" name="submit" value="Submit">
                 </div>
             </div>
