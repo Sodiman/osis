@@ -28,15 +28,32 @@
 	<body>
 		<div id="mydiv">
 		<?php echo "$pesan";?>
-			<h1>Rekapitulasi Pemilihan Ketua OSIS</h1>
 			<center>
+				<table style="margin-bottom: 20px; width: 50%;">
+					<tr style="text-align: center; background: #ddd;">
+						<?php 
+							$queryJumlahUser = mysql_query("select * from tb_user");
+							$jumlahUser = mysql_num_rows($queryJumlahUser);
+							for($i = 2; $i <= $jumlahUser; $i++){
+								$queryBilik = mysql_query("select * from tb_hasil where user = '$i' and  aktif = 'A' and pilihan = '0'");
+								$dataBilik = mysql_num_rows($queryBilik);
+								$noBil = $i - 1;
+								echo "
+									<td>
+									<p style='text-align: center; background: #008080; color: white;padding: 10px;'>Bilik $noBil</p>
+									<a href='reset.php?bilik=$i' style='color: red'>RESET</a>
+									<h3 style='display:block; background: white; border-radius: 4px; padding: 5px; margin: 5px;'>$dataBilik</h3><br>
+									<a href='ulangi.php?bilik=$i' >Ulangi</a><br>
+									<a href='aktif.php?bilik=$i' class='aktifButton'>Aktifkan</a>
+									</td>";
+							}
+						?>
+					</tr>
+				</table>
+				Pilih bilik dan klik aktifkan<br><br>
 				<table class="admin">
 					<tbody>
-						<tr>
-							<td><a href="pendaftaran.php">Pendataran</td>
-							<td colspan="2" style="text-align: right;"><a href='pengumuman.php?total=<?php echo"$total"?>'>Pengumuman</a></td>
-						</tr>
-						<tr style="text-align:center; background: #008080; color: white">
+						<tr style="text-align:center; background: #778989; color: white">
 							<td>Calon
 							</td>
 							<td>
@@ -73,27 +90,6 @@
 						<?php } ?>
 					</tbody>
 				</table>
-				Pilih bilik dan klik aktifkan<br><br>
-				<table style="margin-bottom: 20px; width: 50%; font-size: large;">
-					<tr style="text-align: center; background: #ddd;">
-						<?php 
-							for($i = 2; $i <= 5; $i++){
-								$queryBilik = mysql_query("select * from tb_hasil where user = '$i' and  aktif = 'A' and pilihan = '0'");
-								$data = mysql_num_rows($queryBilik);
-								$noBil = $i - 1;
-								echo "
-									<td>
-									<p style='text-align: center; background: #778989; color: white;padding: 10px;'>Bilik $noBil</p>
-									<a href='reset.php?bilik=$i' style='color: red'>RESET</a>
-									<h3 style='display:block; background: white; border-radius: 4px; padding: 5px; margin: 5px;'>$data</h3><br>
-									<a href='ulangi.php?bilik=$i' >Ulangi</a><br>
-									<a href='aktif.php?bilik=$i&jumlah=$data' class='aktifButton'>Aktifkan</a>
-									</td>";
-							}
-						?>
-					</tr>
-				</table>
-				<a href="logout.php">LOGOUT</a><br><br>
 			</center>
 		</div>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
