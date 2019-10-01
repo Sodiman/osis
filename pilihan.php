@@ -42,29 +42,8 @@
 					$sql = mysql_query("select * from tb_pemilihanosis");
 	
 					while ( $data = mysql_fetch_array($sql)) {
-						$no_calon = $data[no_calon];
-						$warna;
-						switch ($no_calon) {
-							case 1:
-								$warna = "maroon";
-								break;
-							case 2:
-								$warna = "darkblue";
-								break;
-							case 3:
-								$warna = "green";
-								break;
-							case 4:
-								$warna = "purple";
-								break;
-							case 5:
-								$warna = "orange";
-								break;
-							default:
-								break;
-						}
 				?>
-					<td style="background:<?php echo"$warna"?>; color:white; border-radius: 4px;">
+					<td style="background:<?php echo"$data[warna]"?>; color:white; border-radius: 4px;">
 						<center>
 						<h2><?php echo"$data[no_calon]"?></h1>
 						<a href="selesai.php?pilihan=<?php echo"$data[no_calon]"?>&user=<?php echo"$login_session"?>"   onclick="return confirm('Apakah anda yakin mililih <?php echo"$data[nama]"?> ?')">
