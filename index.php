@@ -17,7 +17,7 @@
 			if(isset($login_session)){
 				$label = "<a href='logout.php'>Logout</a>";
 				if ($login_session == 1) {
-					header('Location: admin.php');
+					header('Location: tab.php?tab=Pendaft');
 				}
 			} else {
 				$label = "<a href='form.php'>Login</a>";
