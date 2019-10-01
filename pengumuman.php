@@ -96,29 +96,10 @@
 							while( $calon = mysql_fetch_array( $query ) ){
 								$no=$calon['no_calon'];
 								$nama = $calon['nama'];
+								$warna = $calon['warna'];
 								$sql_jumlah   = "select * from tb_hasil where pilihan='$no' and aktif = 'A'";        
 								$query_jumlah = mysql_query( $sql_jumlah ) or die(mysql_error());
 								$data = mysql_num_rows($query_jumlah);
-								$warna;
-								switch ($no) {
-									case 1:
-										$warna = "maroon";
-										break;
-									case 2:
-										$warna = "darkblue";
-										break;
-									case 3:
-										$warna = "green";
-										break;
-									case 4:
-										$warna = "purple";
-										break;
-									case 5:
-										$warna = "orange";
-										break;
-									default:
-										break;
-								}
 						?>
 								 //data yang diambil dari database dimasukan ke variable nama dan data
 								 //
