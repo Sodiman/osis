@@ -36,7 +36,7 @@
 		$pesan;
 		if ($update) {
 			$_SESSION['message'] =  "<script>$.Notify({caption: 'Update Successs',content: 'Data berhasil disimpan!!',type: 'success'});</script>";
-			header('Location: pendaftaran.php');
+			header('Location: tab.php?tab=Pendaft');
 		} else {
 			$pesan = "<script>$.Notify({caption: 'Update Failed',content: 'Data gagal disimpan!!',type: 'alert'});</script>";
 		}
