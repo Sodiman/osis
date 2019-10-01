@@ -19,19 +19,27 @@
 		
 		$nama = $_POST['nama'];
 		$foto = $_FILES['foto']['name'];
-
-		if (is_uploaded_file($_FILES['foto']['tmp_name'])) {
-			move_uploaded_file($_FILES['foto']['tmp_name'], "foto/".$foto);
-		}
-			
-		$insert = mysql_query("insert into tb_pemilihanosis (no_calon, nama, gambar)
-				values ('$noCalon','$nama','$foto')") or die(mysql_error());
+		$warna = $_POST['warna'];
+		$sqlWarna = mysql_query("SELECT * FROM tb_pemilihanosis where warna = '$warna'");
+		$warnaExist = mysql_num_rows($sqlWarna);
+		
 		$pesan;
-		if ($insert) {
-			$_SESSION['message'] =  "<script>$.Notify({caption: 'Save Successs',content: 'Data berhasil disimpan!!',type: 'success'});</script>";
-			header('Location: tab.php?tab=Pendaft');
+		if ($warnaExist >= 1) {
+			$pesan = "<script>$.Notify({caption: 'Save Failed',content: 'Warna tersebut sudah digunakan!!',type: 'alert'});</script>";
 		} else {
-			$pesan = "<script>$.Notify({caption: 'Save Failed',content: 'Data gagal disimpan!!',type: 'alert'});</script>";
+			if (is_uploaded_file($_FILES['foto']['tmp_name'])) {
+				move_uploaded_file($_FILES['foto']['tmp_name'], "foto/".$foto);
+			}
+				
+			$insert = mysql_query("insert into tb_pemilihanosis (no_calon, nama, gambar, warna)
+					values ('$noCalon','$nama','$foto','$warna')") or die(mysql_error());
+			
+			if ($insert) {
+				$_SESSION['message'] =  "<script>$.Notify({caption: 'Save Successs',content: 'Data berhasil disimpan!!',type: 'success'});</script>";
+				header('Location: tab.php?tab=Pendaft');
+			} else {
+				$pesan = "<script>$.Notify({caption: 'Save Failed',content: 'Data gagal disimpan!!',type: 'alert'});</script>";
+			}
 		}
 	}
 ?>
@@ -45,14 +53,16 @@
 	<body>
 		<?php echo "$pesan";?>
 		<h1>Pendaftaran Calon</h1>
-		<form action="" method="POST" enctype="multipart/form-data">
+		<form id="form" action="" method="POST" enctype="multipart/form-data">
 			<div id="main">
 				<h2 style="text-align: center; margin-bottom: 30px;">Tambah Data</h2>
 				<div id="sisiplogin">
 					<input class="myInput" type="text" name="nama" value="" placeholder="Masukkan nama calon..." required="true"><br>
-					<img id="gambar" src="foto/gambar.gif" style="width: 300px">
-					<input id="imgInp" onchange="readURL(this)" style="margin-bottom: 30px;" type="file" name="foto" style="padding: 12px" value="" required="true" accept="image/x-png,image/gif,image/jpeg"><br>
-					<input class="submit" type="submit" name="submit" value="Submit">
+					<img id="gambar" src="foto/gambar.jpg" style="width: 300px">
+					<input id="imgInp" onchange="readURL(this)" style="margin-bottom: 0px;" type="file" name="foto" style="padding: 12px" value="" required="true" accept="image/x-png,image/gif,image/jpeg">
+					<br><br><span id="warnap">Pilih warna : </span><br>
+					<input type="color" id="colorChoice" onchange="getWarna()" name="warna" value="<?php echo "$color"?>"><br><br>
+					<input class="submit" type="submit" name="submit" value="Submit" onClick="return (validate() && spamCheck())">
 				</div>
 			</div>
 		</form>
@@ -73,6 +83,22 @@
 				$("#imgInp").change(function() {
 				  readURL(this);
 			});
+			
+			function getWarna() {
+			  var x = document.getElementById("colorChoice").value;
+			  document.getElementById("warnap").innerHTML = 'Pilih warna : ' + x;
+			};
+			
+			function validate() {
+				var elements = document.getElementById("form").elements;
+				for (var i = 0, element; element = elements[i++];) {
+					if (element.type === 'color' && element.value === '#000000') {
+						alert("Silahkan pilih warna selain hitam");
+						return false;
+					}
+				}
+				return true;
+			};
 		</script>
 	</body>
 </html>
