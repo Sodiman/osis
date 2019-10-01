@@ -1,12 +1,7 @@
 <?php
 	include('koneksi.php');
-	
-	$total = $_GET['total'];
-	$cek = mysql_query("select * from tb_hasil where aktif = 'A'");
-	$cekTotal = mysql_num_rows($cek);
-	if ($total != $cekTotal) {
-		header('Location: /osis');
-	}
+	$sql_total = mysql_query("select * from tb_hasil where aktif = 'A'");
+	$total = mysql_num_rows($sql_total);
 ?>
 <html>
 	<head>
@@ -42,7 +37,7 @@
 					plotBorderWidth: 0
 				},
 					title: {
-						text: 'Pemilihan Ketua Osis'
+						text: 'Hasil Pemungutan Suara'
 					},
 					subtitle: {
 						text: 'Total Suara : <?php echo $total;?>'
@@ -191,12 +186,13 @@
 		</script>
 	</head>
 	<body>
-		<h1>Hasil Pemungutan Suara</h1>
-		<div id="container"></div>
-		<input type="radio" name="mychart" class="mychart" id= "column" value="column" onclick= "chartfunc()" checked>Column
-		<input type="radio" name="mychart" class="mychart" id= "bar" value="bar" onclick= "chartfunc()">Bar
-		<input type="radio" name="mychart" class="mychart" id= "pie" value="pie" onclick= "chartfunc()">Pie
-		<input type="radio" name="mychart" class="mychart" id= "line" value="line" onclick= "chartfunc()">Line
-		<a class="kosongkan" href="truncate.php" onclick="return confirm('Apakah anda yakin menghapus semua data?')">Kosongkan Data</a>
+		<center>
+			<div id="container"></div>
+			<input type="radio" name="mychart" class="mychart" id= "column" value="column" onclick= "chartfunc()" checked>Column
+			<input type="radio" name="mychart" class="mychart" id= "bar" value="bar" onclick= "chartfunc()">Bar
+			<input type="radio" name="mychart" class="mychart" id= "pie" value="pie" onclick= "chartfunc()">Pie
+			<input type="radio" name="mychart" class="mychart" id= "line" value="line" onclick= "chartfunc()">Line
+		</center>
+			<a class="kosongkan" href="truncate.php" onclick="return confirm('Apakah anda yakin menghapus semua data?')">Kosongkan Data</a>
 	</body>
 </html>
