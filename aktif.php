@@ -6,10 +6,11 @@
 	$data = mysql_fetch_array($query);
 	if($data['id'] != 1){
 		$bilik = $_GET['bilik'];
-		$jml = $_GET['jumlah'];
+		$query2 = mysql_query("select * from tb_hasil where user = '$bilik' and pilihan = '0'"); 
+		$jml = mysql_num_rows($query2);
 		if ($jml == 0) {
 			mysql_query("insert into tb_hasil (aktif, user) values ('A', '$bilik')");
 		}
 	}
-	header('Location: /osis');
+	header('Location: tab.php?tab=Pelak');
 ?>
