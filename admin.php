@@ -82,8 +82,7 @@
 							<td style="text-align:center">
 								<?php echo"$jml"?>
 							</td>
-							<td >
-								<img src="foto/<?php echo"$no"?>.gif" width="<?php echo"$perolehan%"?>" height="15">
+							<td style="text-align:center">
 								<?php echo"$perolehan"?>%
 							</td>
 						</tr>
