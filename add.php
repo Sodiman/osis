@@ -29,7 +29,7 @@
 		$pesan;
 		if ($insert) {
 			$_SESSION['message'] =  "<script>$.Notify({caption: 'Save Successs',content: 'Data berhasil disimpan!!',type: 'success'});</script>";
-			header('Location: pendaftaran.php');
+			header('Location: tab.php?tab=Pendaft');
 		} else {
 			$pesan = "<script>$.Notify({caption: 'Save Failed',content: 'Data gagal disimpan!!',type: 'alert'});</script>";
 		}
