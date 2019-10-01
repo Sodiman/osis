@@ -9,6 +9,178 @@ body {
 	margin:0;
 }
 
+
+* {
+    margin: 0; 
+    padding: 0; 
+}
+
+h1{
+	width: 100%;
+	top: 0;
+	padding: 12px;
+	text-align:center;
+	background: darkblue;
+	color: white;
+	position:fixed
+}
+
+
+
+table.pilihan{
+	margin: 100px auto;
+}
+img.calon{
+	margin:5px;
+	width:400px;
+	height:530px;
+}
+
+table.admin {
+	margin-bottom: 20px; width: 50%;
+}
+
+table.admin th {
+	padding: 10px;background: #008080; color: white
+}
+
+table.admin td {
+	padding: 10px;
+}
+
+
+#main { 
+    background: white; 
+    max-width: 300px;
+    margin: 130px auto ;
+    padding: 30px; 
+    border-radius: 3px; }
+
+#main p { 
+    text-align:justify;
+    line-height: 140%; 
+    margin: 16px 0 24px 0; }
+
+
+#main a { 
+    text-align: center; 
+    background: inherit;
+    text-decoration: none;
+    margin: auto;
+}
+
+#main .button {
+    padding: 12px;
+    width: 100px;
+}
+
+#load { 
+    color: rgba(0,0,0,0.4); 
+    text-align: center; 
+    font-size: 13px; }
+
+@media (max-width: 600px) {
+    body, #main { 
+        margin-top: 0; 
+        background: white; 
+        box-shadow: none; }
+    body { 
+        border-top: 0 solid #ffa100; }
+}
+y { 
+    border-top: 16px solid #ffa100; }
+	
+#sisiplogin {
+    width: inherit;
+    margin-right: 16px;
+}
+
+#sisiplogin .myInput {
+    width: 104%;
+    display: block; 
+    padding: 12px 0 12px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#sisiplogin .myInputA {
+    width: 104%;
+    display: block; 
+    padding: 12px 0 12px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+
+#sisiplogin .submit { 
+    width: 104%;
+    display: block;  
+    background: #039be5; 
+    text-transform: uppercase; 
+    text-decoration: none; 
+    color: white; 
+    padding: 16px 0 16px 0;
+    border-radius: 4px; }
+	
+#container{
+	margin: 20px 20px 8px 20px;
+}
+
+input.mychart {
+	margin-left: 20px;
+}
+
+a.kosongkan {
+	padding: 5px;text-align: center; background: red; color: white; border-radius: 4px; position:absolute;
+	top:145;
+	left: 30;
+}
+
+a.aktifButton {
+	background-image: url("/osis/foto/button.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: block; padding:12px; margin:5px;margin-top:10px;
+	text-decoration: none;
+	color:green;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  margin-top: 62;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding-top: 8px;
+  border-top: none;
+}
+
 .notify-container {
     position: fixed;
     top: 0;
@@ -155,145 +327,4 @@ body {
 .notify.warning .notify-closer {
     background-color: #fa6800;
     color: #ffffff;
-}
-
-
-* {
-    margin: 0; 
-    padding: 0; 
-}
-
-h1{
-	width: 100%;
-	top: 0;
-	padding: 12px;
-	text-align:center;
-	background: darkblue;
-	color: white;
-	position:fixed
-}
-
-
-
-table.pilihan{
-	margin: 130px auto;
-	
-}
-img.calon{
-	margin:5px;
-	width:400px;
-	height:530px;
-}
-
-table.admin {
-	margin-top:130px; margin-bottom: 20px; width: 50%; font-size: large;
-}
-
-table.admin th {
-	padding: 10px;background: #008080; color: white
-}
-
-table.admin td {
-	padding: 10px;
-}
-
-
-#main { 
-    background: white; 
-    max-width: 300px;
-    margin: 130px auto ;
-    padding: 30px; 
-    border-radius: 3px; }
-
-#main p { 
-    text-align:justify;
-    line-height: 140%; 
-    margin: 16px 0 24px 0; }
-
-
-#main a { 
-    text-align: center; 
-    background: inherit;
-    text-decoration: none;
-    margin: auto;
-}
-
-#main .button {
-    padding: 12px;
-    width: 100px;
-}
-
-#load { 
-    color: rgba(0,0,0,0.4); 
-    text-align: center; 
-    font-size: 13px; }
-
-@media (max-width: 600px) {
-    body, #main { 
-        margin-top: 0; 
-        background: white; 
-        box-shadow: none; }
-    body { 
-        border-top: 0 solid #ffa100; }
-}
-y { 
-    border-top: 16px solid #ffa100; }
-	
-#sisiplogin {
-    width: inherit;
-    margin-right: 16px;
-}
-
-#sisiplogin .myInput {
-    width: 104%;
-    display: block; 
-    padding: 12px 0 12px 12px;
-    border: 1px solid #ddd;
-    margin-bottom: 16px;
-    border-radius: 4px;
-}
-
-#sisiplogin .myInputA {
-    width: 104%;
-    display: block; 
-    padding: 12px 0 12px 12px;
-    border: 1px solid #ddd;
-    margin-bottom: 16px;
-    border-radius: 4px;
-}
-
-
-
-#sisiplogin .submit { 
-    width: 104%;
-    display: block;  
-    background: #039be5; 
-    text-transform: uppercase; 
-    text-decoration: none; 
-    color: white; 
-    padding: 16px 0 16px 0;
-    border-radius: 4px; }
-	
-#container{
-	margin-top: 100px;
-	margin-right: 20px;
-	margin-left: 20px;
-	height:80%;
-}
-
-input.mychart {
-	margin-left: 20px;
-}
-
-a.kosongkan {
-	padding: 5px;text-align: center; background: red; color: white; left: 30; top: 110; position: absolute; border-radius: 4px
-}
-
-a.aktifButton {
-	background-image: url("/osis/foto/button.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	display: block; padding:12px; margin:5px;margin-top:10px;
-	text-decoration: none;
-	color:green;
 }
