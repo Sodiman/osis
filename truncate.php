@@ -10,6 +10,6 @@
 	} else {
 		$bilik = $_GET['bilik'];
 		mysql_query("truncate tb_hasil");
-		header('Location: /osis/pengumuman.php?total=0');
+		header('Location: tab.php?tab=Pengum');
 	}
 ?>
