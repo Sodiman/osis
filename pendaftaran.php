@@ -42,7 +42,7 @@
 				?>
 				<tr style="background: white;">
 					<td style="text-align: center"><?php echo"$no"?></td>
-					<td><?php echo"$data[no_calon]"?></td>
+					<td style="text-align:center"><?php echo"$data[no_calon]"?></td>
 					<td><?php echo"$data[nama]"?></td>
 					<td><a href="edit.php?noCalon=<?php echo"$data[no_calon]"?>">Edit</a><br><a href="delete.php?noCalon=<?php echo"$data[no_calon]"?>&foto=<?php echo"$data[gambar]"?>" onclick="return confirm('Apakah anda yakin menghapus data ini?')">Hapus</a></td>
 				</tr>
