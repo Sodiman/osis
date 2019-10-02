@@ -62,7 +62,7 @@
 					<input id="imgInp" onchange="readURL(this)" style="margin-bottom: 0px;" type="file" name="foto" style="padding: 12px" value="" required="true" accept="image/x-png,image/gif,image/jpeg">
 					<br><br><span id="warnap">Pilih warna : </span><br>
 					<input type="color" id="colorChoice" onchange="getWarna()" name="warna" value="<?php echo "$color"?>"><br><br>
-					<input class="submit" type="submit" name="submit" value="Submit" onClick="return (validate() && spamCheck())">
+					<input class="submit" type="submit" name="submit" value="Submit" onClick="return (validate())">
 				</div>
 			</div>
 		</form>
