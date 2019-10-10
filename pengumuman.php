@@ -167,6 +167,7 @@
 		</script>
 	</head>
 	<body>
+		<a class="kosongkan" href="truncate.php" onclick="return confirm('Apakah anda yakin menghapus semua data?')">Hapus</a>
 		<center>
 			<div id="container"></div>
 			<input type="radio" name="mychart" class="mychart" id= "column" value="column" onclick= "chartfunc()" checked>Column
@@ -174,6 +175,5 @@
 			<input type="radio" name="mychart" class="mychart" id= "pie" value="pie" onclick= "chartfunc()">Pie
 			<input type="radio" name="mychart" class="mychart" id= "line" value="line" onclick= "chartfunc()">Line
 		</center>
-			<a class="kosongkan" href="truncate.php" onclick="return confirm('Apakah anda yakin menghapus semua data?')">Kosongkan Data</a>
 	</body>
 </html>
