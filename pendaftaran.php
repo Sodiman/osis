@@ -22,6 +22,7 @@
 	</head>
 	<body>
 		<center>
+		<br><h3>Pendaftaran Calon</h3>
 		<table class="admin">
 			<thead>
 				<tr>
