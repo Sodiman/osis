@@ -29,6 +29,7 @@
 		<div id="mydiv">
 		<?php echo "$pesan";?>
 			<center>
+				<br><h3>Rekapitulasi</h3><br>
 				<table style="margin-bottom: 20px; width: 50%;">
 					<tr style="text-align: center; background: #ddd;">
 						<?php 
@@ -40,7 +41,7 @@
 								$noBil = $i - 1;
 								echo "
 									<td>
-									<p style='text-align: center; background: #008080; color: white;padding: 10px;'>Bilik $noBil</p>
+									<h4 style='text-align: center; background: #008080; color: white;padding: 10px;'>Bilik $noBil</h4>
 									<a href='reset.php?bilik=$i' style='color: red'>RESET</a>
 									<h3 style='display:block; background: white; border-radius: 4px; padding: 5px; margin: 5px;'>$dataBilik</h3><br>
 									<a href='ulangi.php?bilik=$i' >Ulangi</a><br>
