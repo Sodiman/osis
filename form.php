@@ -24,8 +24,13 @@
 			$_SESSION['login_user']=$u;
 			$_SESSION['message']= "<script>$.Notify({caption: 'Login Success',content: 'Anda berhasil Login',type: 'success'});</script>";
 			$data = mysql_fetch_array($query);
-			 
+			
 			if ($data['id'] == 1) {
+				$response["id"] = $data['id'];
+				$data['username'] = $data['username'];
+				$response["success"] = 1;
+				$response["message"] = "You Logged In Successfully";
+				echo json_encode($response);
 				header("location: tab.php?tab=Pendaft");
 			} else {
 				header("location: /osis");
